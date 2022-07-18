@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <header>
+        <h1>Organizador de tareas</h1>
+    </header>
+    
+    <main>
+        <section class="input-list">
+            <input
+            id="name_task"
+            type="text"
+            placeholder="Nueva tarea"
+            name="name_task"
+            />
+            <button id="add">Agregar</button>
+        </section>
+        <section class="filter">
+            <select id="filter_state">
+                <option value="all">Todas</option>
+                <option value="completed">Completadas</option>
+                <option value="pending">Pendientes</option>
+            </select>
+        </section>
+        <section class="list-container">
+            <ul id="list"></ul>
+        </section>
+
+        <section class="buttons-delete"></section>
+            <button id="delete_all">Borrar todas las tareas</button>
+            <button id="delete_completed">Borrar tareas completadas</button>    
+        </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
