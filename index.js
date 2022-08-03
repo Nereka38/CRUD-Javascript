@@ -31,6 +31,7 @@ function deleteCompleted() {
   List();
 }
 
+
 document.getElementById("add").addEventListener("click", addTask);
 
 function addTask() {
@@ -43,8 +44,8 @@ function addTask() {
 
   if (array) {
     addTasktoList({
-      texto: inputNameTask.value,
-      estado: "pending"
+      text: inputNameTask.value,
+      state: "pending"
     });
   }
 
@@ -57,6 +58,12 @@ function addTasktoList(task) {
 
   List();
 }
+function eliminate() {
+  this.parentElement.remove();
+  
+};
+
+List();
 
 function List() {
   const ul = document.getElementsByTagName("ul")[0];
@@ -67,7 +74,7 @@ function List() {
       const li = document.createElement("li");
       li.className="listName";
       const spanTexto = document.createElement("span");
-      spanTexto.appendChild(document.createTextNode(task.texto));
+      spanTexto.appendChild(document.createTextNode(task.text));
       spanTexto.classList.add("content");
       li.appendChild(spanTexto);
 
@@ -103,6 +110,7 @@ function List() {
       span.className = "close";
 
       span.appendChild(document.createTextNode("\u00D7"));
+      span.onclick = eliminate;
 
       li.append(span);
       ul.appendChild(li);
